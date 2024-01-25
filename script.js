@@ -4,44 +4,42 @@ window.onload = function() {
     let glaucus = '#6b8fea'
     let colors = [bee, mantis, glaucus]
     let images = [getImg(0), getImg(1), getImg(2)]
-    let colorIdx = 0;
+    let themeIdx = images.length - 1;
 
     function nextTheme() {
-        nextColor()
-        nextImage()
+        themeIdx = (themeIdx + 1) % images.length
+        transitionColor()
+        transitionImage()
     }
 
-    function nextColor() {
-        let targetColor = colors[colorIdx]
+    function transitionColor() {
+        let targetColor = colors[themeIdx]
         document.body.style.color = targetColor;
         document.querySelectorAll('a').forEach(function (a) {
             a.style.color = targetColor;
         })
-        colorIdx = (colorIdx + 1) % colors.length
     }
 
     async function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
     }
 
-    let currentImageIdx = images.length - 1;
-    async function nextImage() {
-        let nextImageIdx = (currentImageIdx + 1) % images.length;
-        while (images[currentImageIdx].style.opacity > 0) {
-            await sleep().then(() => {
-                images[currentImageIdx].style.opacity -= 0.01
-            })
-        }
-        while (images[nextImageIdx].style.opacity < 1) {
-            await sleep().then(() => {
-                images[nextImageIdx].style.opacity = parseFloat(images[nextImageIdx].style.opacity) + 0.01
-            })
-        }
-        currentImageIdx = nextImageIdx
-    }
-
     function getImg(idx) {
         return document.getElementById(`img${idx}`)
+    }
+
+    async function transitionImage() {
+        let prevImageIdx = themeIdx === 0 ? images.length - 1 : themeIdx - 1
+        while (images[prevImageIdx].style.opacity > 0) {
+            await sleep().then(() => {
+                images[prevImageIdx].style.opacity -= 0.01
+            })
+        }
+        while (images[themeIdx].style.opacity < 1) {
+            await sleep().then(() => {
+                images[themeIdx].style.opacity = parseFloat(images[themeIdx].style.opacity) + 0.01
+            })
+        }
     }
 
     function calculateAge(birthdate) {
@@ -58,7 +56,6 @@ window.onload = function() {
 
     for (let i = 0; i < images.length; i++) {
         images[i].style.opacity = 0
-        images[i].style.zIndex = 0
     }
     nextTheme()
     setInterval(nextTheme, 10000);
