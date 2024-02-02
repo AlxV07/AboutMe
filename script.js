@@ -1,7 +1,7 @@
 window.onload = function() {
-    let mantis = '#61ea52'
-    let bee = '#f7eea0'
-    let glaucus = '#6b8fea'
+    let mantis = '#a5e596'
+    let bee = '#f5ea9e'
+    let glaucus = '#bccaee'
     let colors = [bee, mantis, glaucus]
     let images = [getImg(0), getImg(1), getImg(2)]
     let themeIdx = images.length - 1;
@@ -31,12 +31,12 @@ window.onload = function() {
     async function transitionImage() {
         let prevImageIdx = themeIdx === 0 ? images.length - 1 : themeIdx - 1
         while (images[prevImageIdx].style.opacity > 0) {
-            await sleep().then(() => {
+            await sleep(10).then(() => {
                 images[prevImageIdx].style.opacity -= 0.01
             })
         }
         while (images[themeIdx].style.opacity < 1) {
-            await sleep().then(() => {
+            await sleep(10).then(() => {
                 images[themeIdx].style.opacity = parseFloat(images[themeIdx].style.opacity) + 0.01
             })
         }
