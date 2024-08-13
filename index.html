@@ -116,45 +116,55 @@
     <br>
 
     <section>
-        <h3>8/5/2024 - ALPS Post-Workshop Reflection</h3>
+        <h3>8/5/2024 - ALPS Post-Workshop Reflection (Revised 8/13/2024)</h3>
         <p>
-            Machine learning models like ChatGPT have taken the spotlight, but while their capabilities might
-            seem impressive, they have a fundamental flaw: they don’t use logic.  This summer I spent two months
-            studying in the Applied Logic Programming Systems (ALPS) workshop at the University of Texas at Dallas (UTD).
-            We dove into a field of AI which is somewhat being overshadowed by ML: “Explainable AI”; machines which don’t
-            rely on just pattern matching to come to conclusions, but which actually use logic.
+            Creating Artificial Intelligence which can think like humans has become a hot topic in recent years.
+            Modern engineers have attempted to construct AI using the technique of machine learning: “teaching”
+            machines to find patterns in past experiences and use them to generate new results.  But while machine
+            learning models like ChatGPT boast impressive capabilities, they lack the fundamental step in the
+            actual human thought process: reason.
 
             <br><br>
 
-            In the first month we started building our foundation by learning the logic programming language, Prolog.
-            A declarative, answer-solving style language, Prolog is unique in the sense that instead of explicitly
-            telling it how to solve solutions, one just feeds in information and Prolog produces a solution itself.
-            I enjoyed this "declarative" style, as it simplifies problem-solving in general and also forces you to think
-            logically when structuring your program.  We also studied recursion and list processing, concepts which I
-            had learned in Lisp from SICP.  After familiarizing ourselves with Prolog, we tested our skills on an
-            assortment of famous computer science puzzles: n-queens, tower-of-hanoi, and send+more=money among many
-            others.  Finally, for a final project I wrote a complete wordle solver application.  Prolog code I wrote
-            during ALPS can be found here:  <a href="https://github.com/AlxV07/UTD_ALPS_2024">https://github.com/AlxV07/UTD_ALPS_2024</a>  At the end of the first month
-            we understood how we could use Prolog to logically solve computational problems.
+            ChatGPT's hallucinations are a humorous defect in the model which demonstrates its lack of reasoning.
+            The model only regurgitates text which it has seen before, without knowing if what it produces is right
+            or wrong.  This lack of reason proposes a serious concern about the usage of such AI: how can we
+            trust machines which don’t understand their own conclusions?
 
             <br><br>
 
-            In the second month we studied the difference between machine learning (ML) and automated reasoning (AR).
-            Conclusions made by neural networks are not really explainable, as they are just drawn from pattern matching.
-            However, using answer set programming (ASP) (we used sCASP, an extension of Prolog), we created explainable
-            machines: machines which could actually produce the reasoning behind their conclusions.  We were shown an
-            ongoing project which was attempting to automate Canadian law using ASP.  Transparent machines which could
-            actually use and explain the logic behind their conclusions could have serious real-world impact,
-            especially in decision-making fields where transparency or corruption / external influence are important
-            issues.  We finished by building mini-decision makers in sCASP on problems to experiment with
-            decision-making processes and discovered how to model real-life situations.
+            However, a different type of AI addresses this problem: “explainable machines”.  This summer, I spent
+            two months at the University of Texas at Dallas (UTD) studying machines which, instead of relying on
+            pattern matching, actually utilized logic to derive conclusions.  Instead of just mimicking conclusions
+            humans have produced, explainable machines mimic the process of how humans produce logical conclusions.
 
             <br><br>
 
-            In conclusion, my experience at the ALPS workshop was very inspiring.
-            I enjoyed learning the Prolog language and how to program logical thought processes.
-            I’ve developed a new perspective on artificially intelligent machines: it may be possible to create
-            actually intelligent machines which utilize logic and reasoning to benefit our world.
+            We can equip explainable machines with logical reasoning by formalizing the thought process into
+            programmatic “rules”.  We can then tell machines to follow these rules when looking at information
+            given to them to derive conclusions.  By following this process, we can see how the machine comes to the
+            conclusion that it produces.  In class, we looked at a project attempting to automate Canadian law using
+            explainable machines.  Explainable machines could have serious real-world impact in fields where
+            transparency is critical in decision-making.
+
+            <br><br>
+
+            To build explainable machines, we used the logic programming language of Prolog.  This language was
+            structured perfectly to design explainable machines: programmers, instead of telling the program what
+            to do, would define facts and rules, telling the machine how it should reason with information provided.
+            The machine would then follow those logical rules to derive a solution for the problem defined by the
+            programmer.  Now, the only task for programmers would be to define in rules the problem they were trying
+            to solve, and then the machine could solve it for them.  We wrote Prolog code to solve famous puzzles
+            including n-queens, tower-of-hanoi, and send+more=money, and I also wrote a Wordle solver.
+            Code I wrote can be found here: <a href="https://github.com/AlxV07/UTD_ALPS_2024">https://github.com/AlxV07/UTD_ALPS_2024</a>
+
+            <br><br>
+
+            My experience this summer at UTD was very inspiring.  I enjoyed learning about the Prolog language and how
+            to formalize the human thought process in code.  It was especially informative to learn about explainable
+            machines and how they could fill the gap in reason of pure machine learning models.  Instead of creating
+            artificiality intelligent machines, we could create actually intelligent machines, utilizing logic and
+            reason to advance sensible decision-making in the world.
 
             <div style="display: flex; justify-content: center;">
                 <img src="imgs/utd_alps_2024.png" alt="ALPS 2024 Completion Certificate" style="width: 70%;">
