@@ -55,13 +55,13 @@ a {
     text-decoration: underline;
 }
 
-#image-container {
+#pfp-image-container {
     width: 400px;
     height: 400px;
     transform: translate(-47%, 0%);
 }
 
-#image-container img {
+#pfp-image-container img {
     width: 410px;
     height: 400px;
     position: absolute;
