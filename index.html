@@ -109,55 +109,51 @@
     <!-- Add blog posts here -->
 
     <section>
-        <h3>8/5/2024 - ALPS Post-Workshop Reflection (Revised 8/13/2024)</h3>
+        <h3>9/15/2024 - Studying ML vs. XAI @ UTD ALPS Lab</h3>
         <p>
-            Creating Artificial Intelligence which can think like humans has become a hot topic in recent years.
-            Modern engineers have attempted to construct AI using the technique of machine learning: “teaching”
-            machines to find patterns in past experiences and use them to generate new results.  But while machine
-            learning models like ChatGPT boast impressive capabilities, they lack the fundamental step in the
-            actual human thought process: reason.
+            “While at a conference a few weeks back, I spent an interesting evening with a grain of salt.”
+            This was one of many nonsensical phrases posted by the user “Mark V. Shaney” on Usenet in the 1980s.
+            Many readers thought Mark was a deranged person, but he was actually a program designed by Rob Pike.
+            Pike’s program was an early form of AI which “learned” to construct sentences by calculating which
+            words often went together in text.  Decades later, more sophisticated AI programs like ChatGPT have emerged.
+            With exponentially larger datasets and more powerful computing resources, these programs are far more capable.
+            Today’s chatbots can easily fool readers with extremely human-like responses.  However, AI programs still
+            make errors reminiscent of Mark V. Shaney.  For example, when asked on September 11th about the date of the
+            Trump v. Harris presidential debate, ChatGPT responded, “The Trump vs. Harris debate you’re referring to
+            took place on September 17, 2024.”  Why do such advanced programs like ChatGPT still make mistakes like
+            this?  The reason is because they lack reasoning.
 
             <br><br>
 
-            ChatGPT's hallucinations are a humorous defect in the model which demonstrates its lack of reasoning.
-            The model only regurgitates text which it has seen before, without knowing if what it produces is right
-            or wrong.  This lack of reason proposes a serious concern about the usage of such AI: how can we
-            trust machines which don’t understand their own conclusions?
+            The flaw lies in the “machine learning” approach this type of AI follows.  It attempts to build and adjust
+            mathematical functions to model training data and then apply these functions to the given task.
+            Conceptually, this approach is the same as that which Mark V. Shaney followed. Mark used a Markov chain
+            to model which words often went together in sentences and then generated new sentences from that information.
+            The process involves no reasoning; it is purely statistics and cannot be explained.  We humans do not guess
+            at conclusions by using mathematical functions; we deduce conclusions using logic and reason.  When we
+            reason, we understand why our conclusions are valid.  Machine learning doesn’t reason, and this lack of
+            reason raises serious concerns about the reliability of its output.  How can we trust a program if we’re
+            not able to explain what it produces?
 
-            <br><br>
+            A plausible solution lies in “explainable AI” (XAI) which, instead of relying on statistics, models
+            reasoning directly.  This summer, I studied at the UT Dallas Applied Logic & Programming Systems (ALPS)
+            Lab where we explored how the human thought process could be formalized using the logical programming
+            language Prolog.  By representing knowledge as programmatic facts and rules in Prolog, we could model
+            an explainable decision process.  XAI utilizes this approach:  instead of mathematical functions,
+            XAI uses logic to actually derive conclusions.  With this AI, one can actually see the program’s
+            “thought process”, the facts and rules the program followed to derive its conclusion.  XAI has the
+            potential to be utilized in the construction of much more powerful AI programs.
 
-            However, a different type of AI addresses this problem: “explainable machines”.  This summer, I spent
-            two months at the University of Texas at Dallas (UTD) studying machines which, instead of relying on
-            pattern matching, actually utilized logic to derive conclusions.  Instead of just mimicking conclusions
-            humans have produced, explainable machines mimic the process of how humans produce logical conclusions.
-
-            <br><br>
-
-            We can equip explainable machines with logical reasoning by formalizing the thought process into
-            programmatic “rules”.  We can then tell machines to follow these rules when looking at information
-            given to them to derive conclusions.  By following this process, we can see how the machine comes to the
-            conclusion that it produces.  In class, we looked at a project attempting to automate Canadian law using
-            explainable machines.  Explainable machines could have serious real-world impact in fields where
-            transparency is critical in decision-making.
-
-            <br><br>
-
-            To build explainable machines, we used the logic programming language of Prolog.  This language was
-            structured perfectly to design explainable machines: programmers, instead of telling the program what
-            to do, would define facts and rules, telling the machine how it should reason with information provided.
-            The machine would then follow those logical rules to derive a solution for the problem defined by the
-            programmer.  Now, the only task for programmers would be to define in rules the problem they were trying
-            to solve, and then the machine could solve it for them.  We wrote Prolog code to solve famous puzzles
-            including n-queens, tower-of-hanoi, and send+more=money, and I also wrote a Wordle solver.
-            Code I wrote can be found here: <a href="https://github.com/AlxV07/UTD_ALPS_2024">https://github.com/AlxV07/UTD_ALPS_2024</a>
-
-            <br><br>
-
-            My experience this summer at UTD was very inspiring.  I enjoyed learning about the Prolog language and how
-            to formalize the human thought process in code.  It was especially informative to learn about explainable
-            machines and how they could fill the gap in reason of pure machine learning models.  Instead of creating
-            artificiality intelligent machines, we could create actually intelligent machines, utilizing logic and
-            reason to advance sensible decision-making in the world.
+            XAI is already used in practice together with machine learning.  “Reliable chatbots” use LLMs to
+            extract facts which are then passed to an XAI to “understand”.  The XAI backend keeps chatbots
+            in check from hallucinating while correctly answering requests.  Professor Gopal Gupta, who leads
+            the UT Dallas ALPS Lab, presented the “FOLD-SE” algorithm which generates rule sets for XAI to perform
+            tabular classification tasks, offering an explainable alternative to pure machine learning classification.
+            Another ongoing project “Rules as Code”, by Jason Morris, aims to use XAI to automate law and legal
+            services.  XAI overcomes the “black-box barrier” of machine learning, opening the door to reliable
+            automation of decision making tasks.  Prolog programs appeared around the same time as Markov chains,
+            and we’ve already seen how the latter has grown with modern advancement.
+            If Mark V. Shaney could grow into ChatGPT, what could advancement in XAI lead to?
 
             <div style="display: flex; justify-content: center;">
                 <img src="imgs/utd_alps_2024.png" alt="ALPS 2024 Completion Certificate" style="width: 70%">
