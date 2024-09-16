@@ -26,20 +26,24 @@
 </header>
 
 <nav>
+    <br>
     <a href="#about" >About Me</a>
     <a href="#accomplishments">Things I've Done</a>
     <a href="#activities">My Activities</a>
     <a href="#connect">Connect</a>
     <a href="#blog">Blog</a>
+    <br>
 </nav>
+
+<button id="toggle-theme">Disable Dynamic Theme</button>
 
 <section id="about">
     <h2>About Me:</h2>
-    Hello! My name is Alexander Chen. I'm <code id="age-code-block"></code> years old and am very interested in Computer Science.
+    Hello! My name is Alexander Chen. I'm <code id="age-code-block"></code> years old and am passionately studying Computer Science.
     I've been programming for ~<code id="prog-age-code-block"></code> years, mainly in the languages of
-    Python, Lisp, Prolog, and JavaS. (Btw I use Arch :D). I've been studying in a variety of fields including
-    algorithms and data structures, application development, and machine learning.
-    Recently, I've started looking deeper into in Computational Linguistics & NLP.
+    Python, Lisp, Prolog, and Java. I've been studying in a variety of fields including
+    algorithms and data structures, application development, and AI.
+    Recently, I've been looking deeper into in NLP and XAI.
     <br><br>
     I live in Dallas, Texas, and homeschool with the <a href="https://modg.org/">Mother of Divine Grace School</a>.
     I participate in competitive programming, speech and debate, and varsity ice hockey. My Myers-Briggs personality is INTJ,
@@ -74,7 +78,7 @@
 </section>
 
 <section id="activities">
-    <h2>My Activity Participation:</h2>
+    <h2>My Activities:</h2>
     <ul>
         <li><a href="https://www.usaco.org/index.php"> USACO</a>: USA Computing Olympiad - (2023-Present)</li>
         <li><a href="https://ncfca.org/">NCFCA Christian Speech & Debate</a>: National Christian Forensics and Communications Association - (2023-Present)</li>
@@ -90,10 +94,10 @@
     <ul>
         <li>Email: alexander.kai.chen@gmail.com</li>
         <li>Discord: @alxv07</li>
-        <li>chess.com: @AlxV07U</li>
         <li><a href="https://github.com/AlxV07" target="_blank">GitHub: https://github.com/AlxV07</a></li>
         <li><a href="https://www.linkedin.com/in/alexander-chen-504893267" target="_blank">LinkedIn: https://www.linkedin.com/in/alexander-chen-504893267</a></li>
         <li><a href="https://www.youtube.com/@alxv07" target="_blank">Youtube: https://www.youtube.com/@alxv07</a></li>
+        <li><a href="https://www.chess.com/member/alxv07u" target="_blank">chess.com: https://www.chess.com/member/alxv07u</a></li>
         <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeCp0pHn4PBhSSaxS0olWIBtHkAVXpJC_5Br3N9dEqeZQi7Zw/viewform?usp=sf_link" target="_blank">Pass Me A Note! (Google Form)</a></li>
     </ul>
 </section>
@@ -101,16 +105,16 @@
 <section id="blog">
     <h2>Blog:</h2>
 
-    <section>
-        <h3>More blog posts coming later... maybe...</h3>
+    <section class="blog-post">
+        <h3>More blog posts coming soon... maybe...</h3>
     </section>
     <br>
 
-    <!-- Add blog posts here -->
+    <!-- Add posts here -->
 
-    <section>
-        <h3>9/15/2024 - Studying ML vs. XAI @ UTD ALPS Lab</h3>
-        <p>
+    <section class="blog-post" id="utd-ml-vs-xai">
+        <br><a class="blog-post-header" href="#utd-ml-vs-xai">9/15/2024 - Studying ML vs. XAI @ UTD ALPS Lab</a><br><br>
+        <div>
             “While at a conference a few weeks back, I spent an interesting evening with a grain of salt.”
             This was one of many nonsensical phrases posted by the user “Mark V. Shaney” on Usenet in the 1980s.
             Many readers thought Mark was a deranged person, but he was actually a program designed by Rob Pike.
@@ -155,7 +159,7 @@
             tabular classification tasks, offering an explainable alternative to pure machine learning classification.
             Another ongoing project “Rules as Code”, by Jason Morris, aims to use XAI to automate law and legal
             services.  XAI overcomes the “black-box barrier” of machine learning, opening the door to reliable
-            automation of decision making tasks.  Prolog programs appeared around the same time as Markov chains,
+            automation of decision-making tasks.  Prolog programs appeared around the same time as Markov chains,
             and we’ve already seen how the latter has grown with modern advancement.
             If Mark V. Shaney could grow into ChatGPT, what could advancement in XAI lead to?
 
@@ -172,16 +176,18 @@
             https://law.mit.edu/pub/blawxrulesascodedemonstration/release/1
             <br>
 
-        <div style="display: flex; justify-content: center;">
+            <br>
+
+            <div style="display: flex; justify-content: center;">
                 <img src="imgs/utd_alps_2024.png" alt="ALPS 2024 Completion Certificate" style="width: 70%">
             </div>
-        </p>
+        </div>
     </section>
     <br>
 
-    <section>
-        <h3>5/24/2024 - PreSummer Update</h3>
-        <p>
+    <section class="blog-post" id="presummer-24-update">
+        <br><a class="blog-post-header" href="#presummer-24-update">5/24/2024 - PreSummer Update</a><br><br>
+        <div>
             Just an update post for my upcoming summer plans!  With AP testing done and school finishing up, I'll be moving into
             a pretty busy break.
 
@@ -201,13 +207,13 @@
             <br><br>
 
             That's a little bit of what's going on with me for now; I'll probably update this page again later when something interesting happens ;)
-        </p>
+        </div>
     </section>
     <br>
 
-    <section>
-        <h3>5/7/2024 - Strong Conclusion to a Strong Year @ Farmers Branch Regional Championship</h3>
-        <p>
+    <section class="blog-post" id="ncfca-regionals-24">
+        <br><a class="blog-post-header" href="#ncfca-regionals-24">5/7/2024 - Strong Conclusion to a Strong Year @ Farmers Branch Regional Championship</a><br><br>
+        <div>
             Last week I competed in the NCFCA Region 11 Regional Championship tournament, the last of my season.
             Again, it was an amazing experience.  We debated the best of the best this tournament, and it was really fun overall.
             We finished with a record of 3-3 (we never had a losing record this year!), getting close to breaking into Regional elimination rounds.
@@ -227,13 +233,13 @@
             <br>
 
             It's been a blessing to have such a fruitful first year, and I can't wait for what's to come!
-        </p>
+        </div>
     </section>
     <br>
 
-    <section>
-        <h3>3/20/2024 - 17/61 @ Ft. Worth National Mixer</h3>
-        <p>
+    <section class="blog-post" id="ncfca-ft-worth-24">
+        <br><a class="blog-post-header" href="#ncfca-ft-worth-24">3/20/2024 - 17/61 @ Ft. Worth National Mixer</a><br><br>
+        <div>
             This past week I've been in Ft. Worth competing in the NCFCA National Mixer hosted there this year.
             It was a great experience; my partner and I competed against some of the best teams in our region
             whilst also getting to debate teams from other regions as well.  We advanced to elimination rounds
@@ -245,13 +251,13 @@
             last tournament.  Both my partner and I were awarded 30 speaker points in separate rounds (the maximum
             number of points available) for the first time!  It was such a great experience to debate against
             everyone at Ft. Worth - we really enjoyed it, and we're looking forward to the tournaments in the future!
-        </p>
+        </div>
     </section>
     <br>
 
-    <section>
-        <h3>1/30/2024 - I rebranded (5->7)</h3>
-        <p>
+    <section class="blog-post" id="rebranding-5-to-7">
+        <br><a class="blog-post-header" href="#rebranding-5-to-7">1/30/2024 - I Rebranded (5->7)</a><br><br>
+        <div>
             Kind of note-worthy news! I changed one character in my username everywhere!
             From "AlxV05" to "AlxV07", links & profiles which could be updated have been updated. Why?
             It goes back to why I have my username in the first place.
@@ -279,22 +285,22 @@
             After updating everything it feels kinda nice. It's always good to have a switch-up
             every now and then (as long as it isn't too drastic nor does it cause any problems).
             Well, I guess till next time. Bye!
-        </p>
+        </div>
     </section>
     <br>
 
-    <section>
-        <h3>1/29/2024 - First Blog Post :D</h3>
-        <p>
+    <section class="blog-post" id="first-post">
+        <br><a class="blog-post-header" href="#first-post">1/29/2024 - First Blog Post :D</a><br><br>
+        <div>
             Hello! This is my first blog post (Yay!) What does one do with a blog?
             I'm not entirely sure, but I think I'm supposed to post about things that
             have been happening. So here are some normal things I've been up to recently:
-        <ul>
-            <li>Training on USACO Silver division problems</li>
-            <li>Started Andrew Ng's Machine Learning Coursera course w/ DeepLearning.AI & Stanford Online</li>
-            <li>Had some fun with robotics friends developing their scouting application</li>
-            <li>Programmed a full-functional String Trie for my UCSD String Algorithms course I'm taking</li>
-        </ul>
+            <ul>
+                <li>Training on USACO Silver division problems</li>
+                <li>Started Andrew Ng's Machine Learning Coursera course w/ DeepLearning.AI & Stanford Online</li>
+                <li>Had some fun with robotics friends developing their scouting application</li>
+                <li>Programmed a full-functional String Trie for my UCSD String Algorithms course I'm taking</li>
+            </ul>
             I think another purpose of having a blog is so that one can share whatever one feels like
             sharing at a moments notice with whoever would care to read that one person's blog. I think
             every now and then people have that sort of inspiration, but I have yet to experience that.
@@ -305,7 +311,7 @@
             new on my LinkedIn then I'm probably just not doing anything note-worthy ;-;)).
             <br><br>
             But that's it for now, bye!
-        </p>
+        </div>
     </section>
     <br>
 
