@@ -1,88 +1,86 @@
-window.onload = function() {
-    let dynamicTheme = true
-    document.getElementById('toggle-theme').onclick = () => {
-        dynamicTheme = !dynamicTheme
-        if (dynamicTheme) {
-            document.getElementById('toggle-theme').textContent = 'Disable Dynamic Theme'
-        } else {
-            document.getElementById('toggle-theme').textContent = 'Enable Dynamic Theme'
-        }
-        nextTheme()
-    }
-    let mantis = '#a5e596'
-    let bee = '#f5ea9e'
-    let glaucus = '#bccaee'
-    let dynamicColors = [bee, mantis, glaucus]
-    let images = [getImg(0), getImg(1), getImg(2)]
-    let themeIdx = images.length - 1;
-
-    function nextTheme() {
-        themeIdx = (themeIdx + 1) % images.length
-        transitionColor()
-        transitionImage()
-    }
-
-    function transitionColor() {
-        let targetColor;
-        let targetBackgroundColor;
-        let targetSectionBackgroundColor;
-        let targetBlogPostBackgroundColor;
-        if (dynamicTheme) {
-            targetColor = dynamicColors[themeIdx]
-            targetBackgroundColor = '#000000'
-            targetSectionBackgroundColor = '#070707'
-            targetBlogPostBackgroundColor = '#101010'
-        } else {
-            targetColor = '#000000'
-            targetBackgroundColor = '#f5f5f5'
-            targetSectionBackgroundColor = '#f1f1f1'
-            targetBlogPostBackgroundColor = '#eeebe6'
-        }
-        document.body.style.color = targetColor;
-        document.body.style.backgroundColor = targetBackgroundColor
-        document.querySelectorAll('nav').forEach(function (a) { a.style.backgroundColor = targetSectionBackgroundColor; })
-        document.querySelectorAll('section').forEach(function (a) { a.style.backgroundColor = targetSectionBackgroundColor; })
-        document.querySelectorAll('.blog-post').forEach(function (a) { a.style.backgroundColor = targetBlogPostBackgroundColor; })
-        document.querySelectorAll('a').forEach(function (a) { a.style.color = targetColor; })
-    }
-
-    async function sleep(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms));
-    }
-
-    function getImg(idx) {
-        return document.getElementById(`img${idx}`)
-    }
-
-    async function transitionImage() {
-        let prevImageIdx = themeIdx === 0 ? images.length - 1 : themeIdx - 1
-        while (images[prevImageIdx].style.opacity > 0) {
-            await sleep(10).then(() => {
-                images[prevImageIdx].style.opacity -= 0.01
-            })
-        }
-        while (images[themeIdx].style.opacity < 1) {
-            await sleep(10).then(() => {
-                images[themeIdx].style.opacity = parseFloat(images[themeIdx].style.opacity) + 0.01
-            })
-        }
-    }
-
-    function calculateAge(birthdate) {
-        const currentDate = new Date();
-        let age = currentDate.getFullYear() - birthdate.getFullYear();
-        if (currentDate.getMonth() < birthdate.getMonth() ||
-            (currentDate.getMonth() === birthdate.getMonth() && currentDate.getDate() < birthdate.getDate())) {
-            age--;
-        }
-        return age;
-    }
-    document.getElementById('age-code-block').textContent = calculateAge(new Date('2008-12-06'));
-    document.getElementById('prog-age-code-block').textContent = calculateAge(new Date('2020-12-06'));
-
-    for (let i = 0; i < images.length; i++) {
-        images[i].style.opacity = 0
+let dynamicTheme = true
+document.getElementById('toggle-theme').onclick = () => {
+    dynamicTheme = !dynamicTheme
+    if (dynamicTheme) {
+        document.getElementById('toggle-theme').textContent = 'Disable Dynamic Theme'
+    } else {
+        document.getElementById('toggle-theme').textContent = 'Enable Dynamic Theme'
     }
     nextTheme()
-    setInterval(nextTheme, 10000);
-};
+}
+let mantis = '#a5e596'
+let bee = '#f5ea9e'
+let glaucus = '#bccaee'
+let dynamicColors = [bee, mantis, glaucus]
+let images = [getImg(0), getImg(1), getImg(2)]
+let themeIdx = images.length - 1;
+
+function nextTheme() {
+    themeIdx = (themeIdx + 1) % images.length
+    transitionColor()
+    transitionImage()
+}
+
+function transitionColor() {
+    let targetColor;
+    let targetBackgroundColor;
+    let targetSectionBackgroundColor;
+    let targetBlogPostBackgroundColor;
+    if (dynamicTheme) {
+        targetColor = dynamicColors[themeIdx]
+        targetBackgroundColor = '#000000'
+        targetSectionBackgroundColor = '#070707'
+        targetBlogPostBackgroundColor = '#101010'
+    } else {
+        targetColor = '#000000'
+        targetBackgroundColor = '#f5f5f5'
+        targetSectionBackgroundColor = '#f1f1f1'
+        targetBlogPostBackgroundColor = '#eeebe6'
+    }
+    document.body.style.color = targetColor;
+    document.body.style.backgroundColor = targetBackgroundColor
+    document.querySelectorAll('nav').forEach(function (a) { a.style.backgroundColor = targetSectionBackgroundColor; })
+    document.querySelectorAll('section').forEach(function (a) { a.style.backgroundColor = targetSectionBackgroundColor; })
+    document.querySelectorAll('.blog-post').forEach(function (a) { a.style.backgroundColor = targetBlogPostBackgroundColor; })
+    document.querySelectorAll('a').forEach(function (a) { a.style.color = targetColor; })
+}
+
+async function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function getImg(idx) {
+    return document.getElementById(`img${idx}`)
+}
+
+async function transitionImage() {
+    let prevImageIdx = themeIdx === 0 ? images.length - 1 : themeIdx - 1
+    while (images[prevImageIdx].style.opacity > 0) {
+        await sleep(10).then(() => {
+            images[prevImageIdx].style.opacity -= 0.01
+        })
+    }
+    while (images[themeIdx].style.opacity < 1) {
+        await sleep(10).then(() => {
+            images[themeIdx].style.opacity = parseFloat(images[themeIdx].style.opacity) + 0.01
+        })
+    }
+}
+
+function calculateAge(birthdate) {
+    const currentDate = new Date();
+    let age = currentDate.getFullYear() - birthdate.getFullYear();
+    if (currentDate.getMonth() < birthdate.getMonth() ||
+        (currentDate.getMonth() === birthdate.getMonth() && currentDate.getDate() < birthdate.getDate())) {
+        age--;
+    }
+    return age;
+}
+document.getElementById('age-code-block').textContent = calculateAge(new Date('2008-12-06'));
+document.getElementById('prog-age-code-block').textContent = calculateAge(new Date('2020-12-06'));
+
+for (let i = 0; i < images.length; i++) {
+    images[i].style.opacity = 0
+}
+nextTheme()
+setInterval(nextTheme, 10000);
