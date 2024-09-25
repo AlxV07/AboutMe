@@ -1,11 +1,6 @@
-let dynamicTheme = true
+let dynamicTheme = false
 document.getElementById('toggle-theme').onclick = () => {
     dynamicTheme = !dynamicTheme
-    if (dynamicTheme) {
-        document.getElementById('toggle-theme').textContent = 'Disable Dynamic Theme'
-    } else {
-        document.getElementById('toggle-theme').textContent = 'Enable Dynamic Theme'
-    }
     nextTheme()
 }
 let mantis = '#a5e596'
@@ -13,7 +8,7 @@ let bee = '#f5ea9e'
 let glaucus = '#bccaee'
 let dynamicColors = [bee, mantis, glaucus]
 let images = [getImg(0), getImg(1), getImg(2)]
-let themeIdx = images.length - 1;
+let themeIdx = images.length - 2;
 
 function nextTheme() {
     themeIdx = (themeIdx + 1) % images.length
@@ -27,15 +22,17 @@ function transitionColor() {
     let targetSectionBackgroundColor;
     let targetBlogPostBackgroundColor;
     if (dynamicTheme) {
+        document.getElementById('toggle-theme').textContent = 'Disable Dynamic Theme'
         targetColor = dynamicColors[themeIdx]
         targetBackgroundColor = '#000000'
         targetSectionBackgroundColor = '#070707'
         targetBlogPostBackgroundColor = '#101010'
     } else {
+        document.getElementById('toggle-theme').textContent = 'Enable Dynamic Theme'
         targetColor = '#000000'
         targetBackgroundColor = '#f5f5f5'
-        targetSectionBackgroundColor = '#f1f1f1'
-        targetBlogPostBackgroundColor = '#eeebe6'
+        targetSectionBackgroundColor = '#eeebe6'
+        targetBlogPostBackgroundColor = '#f3f2f1'
     }
     document.body.style.color = targetColor;
     document.body.style.backgroundColor = targetBackgroundColor
