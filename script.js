@@ -31,8 +31,8 @@ function transitionColor() {
         document.getElementById('toggle-theme').textContent = 'Enable Dynamic Theme'
         targetColor = '#000000'
         targetBackgroundColor = '#f5f5f5'
-        targetSectionBackgroundColor = '#eeebe6'
-        targetBlogPostBackgroundColor = '#f3f2f1'
+        targetSectionBackgroundColor = '#eaeaea'
+        targetBlogPostBackgroundColor = '#eeeeee'
     }
     document.body.style.color = targetColor;
     document.body.style.backgroundColor = targetBackgroundColor
