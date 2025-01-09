@@ -17,11 +17,16 @@ function nextTheme() {
 }
 
 function transitionColor() {
-    let t = 'none';
+    let t;
+    let u;
     if (dynamicTheme) {
         t = 'background-color 4s ease';
+        u = ', color 4s ease';
+    } else {
+        t = 'none';
+        u = '';
     }
-    document.body.style.transition = t;
+    document.body.style.transition = t + u;
     document.querySelectorAll('nav').forEach(function (a) { a.style.transition = t; })
     document.querySelectorAll('section').forEach(function (a) { a.style.transition = t; })
     document.querySelectorAll('.blog-post').forEach(function (a) { a.style.transition = t; })
