@@ -17,6 +17,15 @@ function nextTheme() {
 }
 
 function transitionColor() {
+    let t = 'none';
+    if (dynamicTheme) {
+        t = 'background-color 4s ease';
+    }
+    document.body.style.transition = t;
+    document.querySelectorAll('nav').forEach(function (a) { a.style.transition = t; })
+    document.querySelectorAll('section').forEach(function (a) { a.style.transition = t; })
+    document.querySelectorAll('.blog-post').forEach(function (a) { a.style.transition = t; })
+
     let targetColor;
     let targetBackgroundColor;
     let targetSectionBackgroundColor;

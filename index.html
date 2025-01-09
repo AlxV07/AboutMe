@@ -17,7 +17,8 @@
 <body>
 
 <header>
-    <h1>Alexander Chen / AlxV07</h1>
+    <h1>Alexander Chen</h1>
+    <h3>AlxV07</h3>
     <div id="pfp-image-container">
         <img id="img0" src="imgs/BeeProfile.png" alt="BeePfp" class="transition_image">
         <img id="img1" src="imgs/MantisProfile.jpg" alt="MantisPfp" class="transition_image">
@@ -59,7 +60,8 @@
         <li>I competed in my first ever USACO contest in my high school freshman year and promoted to Silver in Dec. 2023, placing 1022 out of 9707 pre-college competitors worldwide
             (<a href="https://www.linkedin.com/posts/alexander-chen-504893267_on-december-16-2023-my-highschool-freshman-self-activity-7144801466925367296-HFE4?utm_source=share">LinkedIn Post</a>). </li>
 
-        <li>I competed in my first NCFCA Debate Tournament in Jan. 2024 and went to Quarterfinals w/ my partner William Kuykendall, placing 8th out of ~42 overall.</li>
+        <li>I competed in my first NCFCA Debate Tournament in Jan. 2024 and went to Quarterfinals w/ my partner William Kuykendall, placing 8th out of ~42 overall.
+        The following year I went on to place as the 2nd Team Policy Speaker overall at the first National Mixer tournament of the 2024-2025 season.</li>
 
         <li>In 8th-9th grade while reading <a href="https://mitpress.mit.edu/9780262510875/structure-and-interpretation-of-computer-programs/">MIT's SICP</a>,
             I wrote my own Lisp interpreter from scratch <a href="https://github.com/AlxV07/PyLispSICP/tree/main">(PyLisp GitHub)</a>.</li>
@@ -108,6 +110,132 @@
 
     <section class="blog-post">
         <h3>Posts come out irregularly; there might be one soon...</h3>
+    </section>
+    <br>
+
+    <section class="blog-post" id="blog/ftc1-calculus">
+        <br><a class="blog-post-header" href="#blog/ftc1-calculus">1/9/2025 - Similarities Between C.S. Prefix Sums & The 1st Fundamental Theorem of Calculus</a><br><br>
+        <div>
+            I'm taking AP Calculus AB+BC this year, and recently I studied the 1st Fundamental Theorem of Calculus:
+            <br><br>
+            <div style="display: flex; justify-content: center;">
+                <img src="imgs/ps-ftc/ftc1-definition.png" alt="ftc1-definition" style="width: 75%">
+            </div>
+            <br><br>
+
+            This theorem felt surprisingly familiar to me when I first learned it.  I realized it was because I had
+            studied the same idea in computer science, when I learned how to use prefix sum arrays.
+
+            <br><br>
+
+            The FTC-1 can be explained in words as: to find the area under a function's curve (i.e. sum of values) from
+            `a` to `b` is the area under the curve from `0` to `b` minus the area under the curve from `0` to `a`.
+
+            <br><br>
+
+            This idea of finding the sum of a range by computing the sum of a larger range and then
+            subtracting the "extra" range at the start is the same utilized by prefix sums. Here are two visualizations
+            to demonstrate the correlation between the FTC-1 & prefix sums (also explained below).
+
+            <br><br>
+
+            Say we have a function `f(x)`, graphed as such:
+            <br><br>
+            <div style="display: flex; justify-content: center;">
+                <img src="imgs/ps-ftc/ftc1-a.png" alt="ftc1-definition" style="width: 65%">
+            </div>
+            <br><br>
+
+            And we wanted to find the area under the curve from `x = 1` to `x = 2`.
+            <br><br>
+            <div style="display: flex; justify-content: center;">
+                <img src="imgs/ps-ftc/ftc1-d.png" alt="ftc1-definition" style="width: 65%">
+            </div>
+            <br><br>
+
+            We can find this area using the FTC-1.  First, we find the area from `x = 0` to `x = b, i.e. 2`; this is `F(b)`
+            (`F(x)` is the anti-derivative of `f(x)`):
+            <br><br>
+            <div style="display: flex; justify-content: center;">
+                <img src="imgs/ps-ftc/ftc1-b.png" alt="ftc1-definition" style="width: 65%">
+            </div>
+            <br><br>
+
+            Then we find the area from `x = 0` to `x = a i.e. 1`; this value is `F(a)`:
+            <br><br>
+            <div style="display: flex; justify-content: center;">
+                <img src="imgs/ps-ftc/ftc1-c.png" alt="ftc1-definition" style="width: 65%">
+            </div>
+            <br><br>
+
+            We can now simply subtract these two areas (subtract blue from green, i.e. `F(b) - F(a)`) to achieve the desired area:
+            <br><br>
+            <div style="display: flex; justify-content: center;">
+                <img src="imgs/ps-ftc/ftc1-e.png" alt="ftc1-definition" style="width: 65%">
+            </div>
+            <br><br>
+            <div style="display: flex; justify-content: center;">
+                <img src="imgs/ps-ftc/ftc1-d.png" alt="ftc1-definition" style="width: 65%">
+            </div>
+            <br><br>
+
+            This concept is exactly the same as prefix sums. Let's say we have 1-based index array defined below,
+            and wanted to, repeatedly, find the sum of values in a range.  For example, let's say the values from
+            index 2 to index 5 (inclusive):
+            <br><br>
+            <div style="display: flex; justify-content: center;">
+                <img src="imgs/ps-ftc/ps-c.png" alt="ftc1-definition" style="width: 55%">
+            </div>
+            <br><br>
+
+            We could, for every query, naively iterate through the target range and sum up all the values, but this
+            approach is `O(N * Q), where N = len(array) & Q = nof queries`.  We can speed this up to `O(Q)` using
+            prefix arrays.  Let's examine a formula to represent the sum of a range:
+            <br><br>
+            <div style="display: flex; justify-content: center;">
+                <img src="imgs/ps-ftc/ps-a.png" alt="ftc1-definition" style="width: 55%">
+            </div>
+            <br><br>
+
+            Using this observation, and the same concept of the FTC-1, we can pre-compute what's called the "prefix array":
+            an array, where the value at index `i` is the sum of all the values from the start of the original array
+            to the value at `i` (inclusive).  Here's what the prefix array of our example array would look like:
+            <br><br>
+            <div style="display: flex; justify-content: center;">
+                <img src="imgs/ps-ftc/ps-e.png" alt="ftc1-definition" style="width: 55%">
+            </div>
+            <br><br>
+
+            Using this prefix array, we can easily perform a subtraction of the sum of the "overarching" range and the
+            "extra" range which isn't in our target range.  From the above formula, we can now compute the sum of our target
+            range in `O(1)` time.  Here's the formula, which is very similar to the one of FTC-1:
+            <br><br>
+            <div style="display: flex; justify-content: center;">
+                <img src="imgs/ps-ftc/ps-b.png" alt="ftc1-definition" style="width: 55%">
+            </div>
+            <br><br>
+
+            Now, for example, for our range from index 2 to index 5, we can simply perform the following to find our desired sum:
+            <br><br>
+            <div style="display: flex; justify-content: center;">
+                <img src="imgs/ps-ftc/ps-d.png" alt="ftc1-definition" style="width: 55%">
+            </div>
+            <br><br>
+
+            This is a cool cross-over I found and wanted to share while studying the two fields of computer science and mathematics,
+            showing how interconnected they are and the shared underlying concepts beneath them.
+
+            <br><br>
+
+            Acknowledgements:
+            <br>
+            Ms. Henderson (NCSSM); my Calculus teacher for teaching me the 1st Fundamental Theorem of Calculus.
+            <br>
+            Desmos; used to draw graphs for the FTC-1 visualization.
+            <br>
+            USACO Guide; for the prefix sum visualization.
+
+        </div>
     </section>
     <br>
 
