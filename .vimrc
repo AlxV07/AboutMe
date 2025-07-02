@@ -3,6 +3,7 @@ set history=100
 set number
 filetype on
 syntax on
+"colorscheme desert
 
 " === Coding ===
 " auto indent code
