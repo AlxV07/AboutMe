@@ -21,7 +21,6 @@ set shiftwidth=4 smarttab
 " only use space, not tab
 set expandtab
 
-
 " === Searching ===
 " starts searching incrementally
 set incsearch
