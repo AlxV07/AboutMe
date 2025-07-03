@@ -14,7 +14,6 @@ set showmatch
 nnoremap Zn :set invnumber<CR>
 
 " === Tabs ===
-
 " tab visually appears as 8 spaces (differentiate between tab & space)
 set tabstop=8
 " shiftwidth = 4 spaces 
