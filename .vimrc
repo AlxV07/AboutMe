@@ -14,10 +14,14 @@ set showmatch
 nnoremap Zn :set invnumber<CR>
 
 " === Tabs ===
-" tab visually appears as 2 spaces
-set tabstop=2
-" shift by tab size (2 spaces)
-set shiftwidth=2
+
+" tab visually appears as 8 spaces (differentiate between tab & space)
+set tabstop=8
+" shiftwidth = 4 spaces 
+set shiftwidth=4 smarttab
+" only use space, not tab
+set expandtab
+
 
 " === Searching ===
 " starts searching incrementally
