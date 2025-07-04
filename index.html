@@ -3,12 +3,12 @@
 <head>
     <link rel="icon" sizes="16x16 32x32 64x64" href="./imgs/GlaucusProfile.png">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-J8RSL65KCL"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-J8RSL65KCL');
-    </script>
+<!--    <script>-->
+<!--        window.dataLayer = window.dataLayer || [];-->
+<!--        function gtag(){dataLayer.push(arguments);}-->
+<!--        gtag('js', new Date());-->
+<!--        gtag('config', 'G-J8RSL65KCL');-->
+<!--    </script>-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alx - About Me</title>
@@ -16,73 +16,90 @@
 </head>
 <body>
 
+<div id="bg"></div>
+
 <header>
-    <h1>Alexander Chen</h1>
-    <div id="pfp-image-container">
-        <img id="img0" src="imgs/BeeProfile.png" alt="BeePfp" class="transition_image">
-        <img id="img1" src="imgs/MantisProfile.jpg" alt="MantisPfp" class="transition_image">
-        <img id="img2" src="imgs/GlaucusProfile.png" alt="GlaucusPfp" class="transition_image">
+    <a id="title" href="#">Alexander Chen</a>
+    <div id="pfp-container">
+        <img class="pfp" src="imgs/GlaucusProfile.png" alt="GlaucusPfp">
+        <img class="pfp" src="imgs/BeeProfile.png" alt="BeePfp">
+        <img class="pfp" src="imgs/MantisProfile.jpg" alt="MantisPfp">
     </div>
 </header>
 
 <nav>
-    <div class="in-nav">
-        <a class="nav-a" href="#about" >About</a>
-        <a class="nav-a" href="#accomplishments">Accomplishments</a>
-        <a class="nav-a" href="#activities">Activities</a>
-        <a class="nav-a" href="#connect">Connect</a>
-        <a class="nav-a" href="#blog">Blog</a>
-    </div>
+    <a class="nav-a" href="#about" >About</a>
+    <a class="nav-a" href="#accomplishments">Accomplishments</a>
+    <a class="nav-a" href="#activities">Activities</a>
+    <a class="nav-a" href="#connect">Connect</a>
+    <a class="nav-a" href="#blog">Blog</a>
 </nav>
 
 <section id="about">
-    <h2>About:</h2>
-    Hello! My name is Alexander Chen; I'm <code id="age-code-block"></code> years old and am passionately studying Computer Science.
-    I've been programming for ~<code id="prog-age-code-block"></code> years, mainly in the languages of
-    Python, Lisp, Prolog, Java, and C++. I've been studying in a variety of fields including
-    algorithms and data structures, software development, and AI (Distributed Learning, XAI, NLP).
+    <br><a class="section-title" href="#about">About</a><br><br>
+
+    Hey! I'm Alex, a <code id="age-code-block"></code>-year-old passionately studying Computer Science.
+
     <br><br>
-    I live in Dallas, Texas, and homeschool with Mother of Divine Grace School.
-    I do competitive programming (USACO) as well as speech and debate (NCFCA).
-    In my free time, I enjoy playing chess and studying Latin.
-    I have a little sister who plays AAA Ice Hockey on the Dallas Stars Elite
+
+    I've been programming for ~<code id="prog-age-code-block"></code> years, mainly in
+    Python, Java, C++ (I also enjoy Lisp & Prolog), and I love JetBrains products + IdeaVim :)
+
+    <br><br>
+
+    I have experience in algorithms and data structures and software engineering, and
+    am currently studying deeper into AI (Distributed Learning, Explainable AI, Deep Learning, Natural Language Processing).
+    I'm deciding between pursuing a career in software engineering industry and entering into computer science / AI research.
+
+    <br><br>
+
+    I live in Dallas, Texas, and homeschool through Mother of Divine Grace School.
+    I do competitive programming (USACO Gold) as well as speech and debate (previously NCFCA, starting Coolidge).
+
+    <br><br>
+
+    I also enjoy playing chess and studying Latin, and while I used to play ice hockey, I have a little sister who plays AAA on the Dallas Stars Elite
     (<a href="https://www.youtube.com/@minachenhockeyplayer/shorts">Her YouTube Channel</a>).
+
+    <br><br>
+
+    Feel free to reach out about anything - I'd be glad to connect!
 </section>
 
 <section id="accomplishments">
-    <h2>Accomplishments:</h2>
+    <br><a class="section-title" href="#accomplishments">Accomplishments</a><br><br>
     <ul>
-        <li>I accepted the offer for my first summer internship in Oct. 2024 as an Enterprise Technology Software Engineer @ State Farm for Summer 2025. </li>
+        <li>I accepted my first internship in Oct. 2024 as an Enterprise Tech Software Engineer @ State Farm for Summer 2025. </li>
 
-        <li>I promoted to the USACO Gold Division in Feb. 2025 during my high school sophomore year, placing 579 out of 2451 pre-college competitors worldwide;
-        The previous year I had competed in my first ever USACO contest in my high school freshman year and promoted to Silver in Dec. 2023, placing 1022 out of 9707 pre-college competitors worldwide
-            (<a href="https://www.linkedin.com/posts/alexander-chen-504893267_on-december-16-2023-my-highschool-freshman-self-activity-7144801466925367296-HFE4?utm_source=share">LinkedIn Post</a>). </li>
+        <li>I promoted to the USACO Gold Division in Feb. 2025 as a high school sophomore;
+        the previous year I had promoted to Silver as a freshman in my first USACO contest in Dec. 2023, placing 1022 out of 9707 pre-college competitors worldwide.</li>
 
-        <li>I competed in my first NCFCA Debate Tournament in Jan. 2024 and went to Quarterfinals w/ my partner William Kuykendall, placing 8th out of ~42 overall.
-        The following year I went on to place as the 2nd Team Policy Speaker overall at the first National Mixer tournament of the 2024-2025 season.</li>
+        <li>My first NCFCA Team Policy Debate Tournament in Jan. 2024 went well as I went to Quarterfinals w/ my partner William Kuykendall, placing 8th out of ~42 teams overall.
+        The following year I was ranked 2nd Team Policy Speaker out of ~110 competitors overall at the first National Mixer tournament of the 24-25 season.</li>
 
-        <li>In 8th-9th grade while reading <a href="https://mitpress.mit.edu/9780262510875/structure-and-interpretation-of-computer-programs/">MIT's SICP</a>,
+        <li>In 9th grade while reading <a href="https://mitpress.mit.edu/9780262510875/structure-and-interpretation-of-computer-programs/">MIT's SICP</a>,
             I wrote my own Lisp interpreter from scratch <a href="https://github.com/AlxV07/PyLispSICP/tree/main">(PyLisp GitHub)</a>.</li>
-
-        <li>I took my first AP test (APCSA) in 8th grade and scored a 5.</li>
-
-        <li>I built the ActionAutomator in 2023, a Java application which enables the user to create keyboard-shortcuts for mouse and keyboard automation anywhere onscreen.
-            (<a  href="https://github.com/AlxV07/ActionAutomator">ActionAutomator GitHub</a>, <a href="https://youtu.be/poQeJenrsMs">Showcase YouTube Video</a>)</li>
 
         <li>I developed my FRC robotics team's scouting software which went to the World Championships in 2024.</li>
 
-        <li>I co-taught the programming section in a STEM summer camp for underprivileged youths in 2023.</li>
+        <li>I took my first AP test (APCSA) in 8th grade and scored a 5.</li>
 
-        <li>I built a web application to automatically format evidence for my debate club.
-            (<a  href="https://alxv07.github.io/NCFCAAutoEvidencer/">NCFCAAutoEvidencer</a>)</li>
+        <li>I built the ActionAutomator in 2023, a Java application which enables the user to create keyboard-shortcuts for mouse and keyboard automation anywhere onscreen
+            (<a  href="https://github.com/AlxV07/ActionAutomator">ActionAutomator GitHub</a>, <a href="https://youtu.be/poQeJenrsMs">Showcase YouTube Video</a>).</li>
+
+        <li>I co-taught the programming section of a local STEM summer camp for underprivileged youths in 2023.</li>
+
+        <li>I built a widely-used web application to automatically format evidence for my debate club
+            (<a  href="https://alxv07.github.io/NCFCAAutoEvidencer/">NCFCAAutoEvidencer</a>).</li>
     </ul>
 </section>
 
 <section id="activities">
-    <h2>Activities:</h2>
+    <br><a class="section-title" href="#activities">Activities</a><br><br>
     <ul>
         <li><a href="https://www.usaco.org/index.php"> USACO</a>: USA Computing Olympiad - (2023-Present)</li>
-        <li><a href="https://ncfca.org/">NCFCA Christian Speech & Debate</a>: National Christian Forensics and Communications Association - (2023-Present)</li>
+        <li><a href="https://ncfca.org/">NCFCA</a>: National Christian Forensics and Communications Association - (2023-2025)</li>
+        <li><a href="https://coolidgefoundation.org/debate/">Coolidge Debate</a>: Calvin Coolidge Presidential Foundation Debate Program - (2025-Present)</li>
         <li><a href="https://www.firstinspires.org/robotics/ftc">FTC</a>: FIRST Tech Competition - (2021-2022)</li>
         <li><a href="https://www.firstinspires.org/robotics/frc">FRC</a>: FIRST Robotics Competition - (2022-2023)</li>
         <li>CAHA Competitive Travel Ice Hockey: Anaheim Ice Dogs 14u AA - (2021-2022)</li>
@@ -91,7 +108,7 @@
 </section>
 
 <section id="connect">
-    <h2>Connect:</h2>
+    <br><a class="section-title" href="#connect">Connect</a><br><br>
     <ul>
         <li>Email: alexander.kai.chen@gmail.com</li>
         <li>Discord: @alxv07</li>
@@ -104,22 +121,22 @@
 </section>
 
 <section id="blog">
-    <h2>Blog:</h2>
+    <br><a class="section-title" href="#blog">Blog</a><br><br>
 
     <section class="blog-post">
         <h3>Posts come out irregularly, but there might be one soon...</h3>
         <br>
-        <a href="#blog/usaco-gold-obtained">03/02/2025 - Promoting To USACO Gold Division</a><br><br>
-        <a href="#blog/flint-qualifier2025-tourney">01/22/2025 - Results @ Flint 2025 Qualifier</a><br><br>
-        <a href="#blog/ps-ftc1">01/09/2025 - Similarities Between Prefix Sums & The 1st Fundamental Theorem of Calculus</a><br><br>
-        <a href="#blog/onlinefall2024-tourney">12/31/2024 - Results @ Fall 2024 National Mixer</a><br><br>
-        <a href="#blog/first-internship">11/01/2024 - My First Internship</a><br><br>
-        <a href="#blog/utd-ml-vs-xai">09/15/2024 - Studying ML vs. XAI @ UTD ALPS Lab</a><br><br>
-        <a href="#blog/presummer-24-update">05/24/2024 - PreSummer Update</a><br><br>
-        <a href="#blog/ncfca-regionals-24">05/07/2024 - Strong Conclusion @ Farmers Branch Regional Championship</a><br><br>
-        <a href="#blog/ncfca-ft-worth-24">03/20/2024 - 17/61 @ Ft. Worth National Mixer</a><br><br>
-        <a href="#blog/rebranding-5-to-7">01/30/2024 - I Rebranded (5->7)</a><br><br>
-        <a href="#blog/first-post">01/29/2024 - First Blog Post :D</a><br><br>
+        <a class="blog-toc" href="#blog/usaco-gold-obtained">03/02/2025 - Promoting To USACO Gold Division</a><br><br>
+        <a class="blog-toc" href="#blog/flint-qualifier2025-tourney">01/22/2025 - Results @ Flint 2025 Qualifier</a><br><br>
+        <a class="blog-toc" href="#blog/ps-ftc1">01/09/2025 - Similarities Between Prefix Sums & The 1st Fundamental Theorem of Calculus</a><br><br>
+        <a class="blog-toc" href="#blog/onlinefall2024-tourney">12/31/2024 - Results @ Fall 2024 National Mixer</a><br><br>
+        <a class="blog-toc" href="#blog/first-internship">11/01/2024 - My First Internship</a><br><br>
+        <a class="blog-toc" href="#blog/utd-ml-vs-xai">09/15/2024 - Studying ML vs. XAI @ UTD ALPS Lab</a><br><br>
+        <a class="blog-toc" href="#blog/presummer-24-update">05/24/2024 - PreSummer Update</a><br><br>
+        <a class="blog-toc" href="#blog/ncfca-regionals-24">05/07/2024 - Strong Conclusion @ Farmers Branch Regional Championship</a><br><br>
+        <a class="blog-toc" href="#blog/ncfca-ft-worth-24">03/20/2024 - 17/61 @ Ft. Worth National Mixer</a><br><br>
+        <a class="blog-toc" href="#blog/rebranding-5-to-7">01/30/2024 - I Rebranded (5->7)</a><br><br>
+        <a class="blog-toc" href="#blog/first-post">01/29/2024 - First Blog Post :D</a><br><br>
     </section>
     <br>
 

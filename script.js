@@ -1,33 +1,39 @@
-let images = [getImg(0), getImg(1), getImg(2)]
-let themeIdx = images.length - 2;
+// ======= Pfp Cycle =======
+
+const pfps = document.querySelectorAll('.pfp');
+pfps.forEach(pfp => pfp.style.opacity = '0');
+
+let idx = pfps.length - 1;  // start transition to first pfp
 
 function nextTheme() {
-    themeIdx = (themeIdx + 1) % images.length
-    transitionImage()
+    idx = (idx + 1) % pfps.length;
+    transitionImage();
 }
+
 async function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-function getImg(idx) {
-    return document.getElementById(`img${idx}`)
-}
-
 async function transitionImage() {
-    let prevImageIdx = themeIdx === 0 ? images.length - 1 : themeIdx - 1
-    while (images[prevImageIdx].style.opacity > 0) {
+    const prevIdx = idx === 0 ? pfps.length - 1 : idx  - 1;
+    while (pfps[prevIdx].style.opacity > 0) {
         await sleep(10).then(() => {
-            images[prevImageIdx].style.opacity -= 0.01
+            pfps[prevIdx].style.opacity -= '0.01';
         })
     }
-    while (images[themeIdx].style.opacity < 1) {
+    while (pfps[idx].style.opacity < 1) {
         await sleep(10).then(() => {
-            images[themeIdx].style.opacity = parseFloat(images[themeIdx].style.opacity) + 0.01
+            pfps[idx].style.opacity = (parseFloat(pfps[idx].style.opacity) + 0.01).toString();
         })
     }
 }
 
-function calculateAge(birthdate) {
+nextTheme();
+setInterval(nextTheme, 10000);
+
+// ======= Year-Based =======
+
+function yearsSince(birthdate) {
     const currentDate = new Date();
     let age = currentDate.getFullYear() - birthdate.getFullYear();
     if (currentDate.getMonth() < birthdate.getMonth() ||
@@ -36,11 +42,6 @@ function calculateAge(birthdate) {
     }
     return age;
 }
-document.getElementById('age-code-block').textContent = calculateAge(new Date('2008-12-06'));
-document.getElementById('prog-age-code-block').textContent = calculateAge(new Date('2020-12-06'));
 
-for (let i = 0; i < images.length; i++) {
-    images[i].style.opacity = 0
-}
-nextTheme()
-setInterval(nextTheme, 10000);
+document.getElementById('age-code-block').textContent = yearsSince(new Date('2008-12-06')).toString();
+document.getElementById('prog-age-code-block').textContent = yearsSince(new Date('2020-12-06')).toString();
