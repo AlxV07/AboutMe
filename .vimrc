@@ -46,4 +46,3 @@ nnoremap Zp ipair<int, int><Esc>
 nnoremap Zm iif __name__ == '__main__':<CR><esc>
 " input
 nnoremap Zi imap(int, input().split())
-
