@@ -67,15 +67,16 @@ header {
 /* ======= */
 
 nav {
-    width: 100%;
-    height: fit-content;
     display: flex;
-    justify-content: center;
     flex-direction: row;
     z-index: 1000;
     top: 0;
     position: sticky;
     background: #2c2c2c;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    text-align: center;
 }
 
 .nav-a {
@@ -91,18 +92,43 @@ nav {
     text-decoration: underline;
 }
 
-.nav-name {
-    position: absolute;
-    left: 10px;
+.nav-center {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+    justify-content: center;
 }
 
-.nav-name:hover {
+.nav-left .nav-right {
+    flex-shrink: 0;
+}
+
+.nav-left:hover {
     text-decoration: none;
 }
 
-.nav-a-to-top {
-    position: absolute;
-    right: 10px;
+.nav-right {
+    text-align: center;
+}
+
+@media (max-width: 900px) {
+    .nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-center {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.0rem;
+    }
+
+    .nav-left, .nav-right {
+        margin: 5px 0;
+    }
 }
 
 /* ======= */
