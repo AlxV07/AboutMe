@@ -18,7 +18,7 @@ body {
     top: 0;
     left: 0;
     z-index: -1;
-    background: #f3f3f3
+    background: #ffffff
 }
 
 .page-break {
@@ -32,7 +32,10 @@ body {
 header {
     padding: 20px;
     text-align: center;
-    background: #494949;
+
+    /*background: #494949;*/
+    background: radial-gradient(circle, #737373 0%, #343434 70%);
+
     width: 100%;
     display: flex;
     justify-content: center;
