@@ -29,7 +29,7 @@ async function transitionImage() {
 }
 
 nextTheme();
-setInterval(nextTheme, 10000);
+// setInterval(nextTheme, 10000);
 
 // ======= Year-Based =======
 

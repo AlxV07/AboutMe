@@ -7,7 +7,7 @@ body {
     justify-content: center;
     color: black;
     overflow-x: hidden;
-    font-family: sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-style: normal;
 }
 
@@ -36,7 +36,7 @@ h4 {
 header {
     padding: 20px;
     text-align: center;
-    background: radial-gradient(circle, #737373 0%, #343434 70%);
+    background: radial-gradient(circle, #818181 0%, #343434 70%);
     width: 100%;
     display: flex;
     justify-content: center;
@@ -76,7 +76,7 @@ nav {
     z-index: 1000;
     top: 0;
     position: sticky;
-    background: #2c2c2c;
+    background: #282828;
     align-items: center;
     justify-content: space-between;
     width: 100%;
@@ -212,7 +212,7 @@ section a:hover {
 
 footer {
     width: 100%;
-    padding: 17px;
+    padding: 13px;
     text-align: center;
     font-weight: bold;
     background: #2c2c2c;

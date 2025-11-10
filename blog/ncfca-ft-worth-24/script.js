@@ -1,5 +1,5 @@
 const nav = `<nav>
-    <div class="nav-left nav-a">Alexander Kai Chen</div>
+    <div class="nav-left nav-a"><a class="nav-a" style="margin: 0; padding: 0" href="/AboutMe/#">Alexander Kai Chen</a></div>
     <div class="nav-center">
         <a class="nav-a" href="/AboutMe/#about" >About</a>
         <a class="nav-a" href="/AboutMe/#accomplishments">Accomplishments</a>
